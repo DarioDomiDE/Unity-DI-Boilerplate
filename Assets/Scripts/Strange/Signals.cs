@@ -4,10 +4,11 @@ public class StartSignal : Signal { }
 
 // Signals Mediator to Controller
 
-public class TryLoginSignal : Signal { }
+public class TryBlaSignal : Signal<string> { }
+public class TryBlubbSignal : Signal<string> { }
 
 // Signals Controller to Mediator
 
-public class LoggedInSignal : Signal<string> { }
-public class LoginFailedSignal : Signal { }
+public class DoBlaSignal : Signal { }
+public class DoBlubbSignal : Signal { }
 

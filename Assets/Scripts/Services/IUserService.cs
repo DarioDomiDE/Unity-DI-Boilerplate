@@ -3,5 +3,5 @@ using UnityEngine;
 
 public interface IUserService
 {
-    void UpdateNickname(string nickname);
+    void UpdateNickname(string source);
 }

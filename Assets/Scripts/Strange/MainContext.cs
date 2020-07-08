@@ -26,11 +26,12 @@ public class MainContext : SignalContext
         commandBinder.Bind<StartSignal>()
             .To<StartCommand>()
             .Once();
-        commandBinder.Bind<TryLoginSignal>().To<LoginCommand>().Pooled();
+        commandBinder.Bind<TryBlaSignal>().To<LoginCommand>().Pooled();
+        commandBinder.Bind<TryBlubbSignal>().To<LoginCommand>().Pooled();
 
         // Signals as Singleton
-        injectionBinder.Bind<LoggedInSignal>().ToSingleton();
-        injectionBinder.Bind<LoginFailedSignal>().ToSingleton();
+        injectionBinder.Bind<DoBlaSignal>().ToSingleton();
+        injectionBinder.Bind<DoBlubbSignal>().ToSingleton();
 
     }
 

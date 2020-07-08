@@ -3,15 +3,24 @@
 class UserService : IUserService
 {
     [Inject]
-    public LoggedInSignal LoggedInSignal { get; set; }
+    public DoBlaSignal DoBlaSignal { get; set; }
+
+    [Inject]
+    public DoBlubbSignal DoBlubbSignal { get; set; }
 
     [Inject]
     public IUser CurrentUser { get; set; }
 
-    public void UpdateNickname(string nickname)
+    public void UpdateNickname(string source)
     {
-        Print.Log("Service triggered");
-        this.CurrentUser.Nickname = nickname;
-        LoggedInSignal.Dispatch(nickname);
+        if (source == "Bla")
+        {
+            DoBlaSignal.Dispatch();
+        }
+        else
+        {
+            DoBlubbSignal.Dispatch();
+        }
     }
+
 }
